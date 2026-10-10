@@ -4,8 +4,6 @@ Keeps only the most recently started TaskNotes task timer active, without modify
 
 This is an independent companion plugin, not part of TaskNotes.
 
-Maintainers: see the [distribution handoff](HANDOFF.md) for the originating snapshot, verified release, and remaining vault checks.
-
 ## Installation and updates
 
 Version `0.1.0` is available from [GitHub Releases](https://github.com/lopezpdvn/tasknotes-timetrack/releases). Install through BRAT:
@@ -41,6 +39,19 @@ The plugin runs inside Obsidian and does not require TaskNotes' HTTP server. It 
 Reconciliation is reactive: TaskNotes starts the new session before this companion stops older sessions. Queued reconciliation handles rapid ordinary UI switching, but does not provide an atomic cross-request or cross-device guarantee. Equal start timestamps retain the first session returned by TaskNotes. Existing timers are not reconciled automatically on startup. These behaviors are preserved from the original version.
 
 TaskNotes must load within the connection retry window (about 30 seconds). Reload this companion after enabling or reloading TaskNotes if it does not reconnect.
+
+## Live validation checklist
+
+These checks remain open. Use disposable tasks in each target vault, and record the tested Obsidian and TaskNotes versions when checking off an item.
+
+- [ ] Install through BRAT with TaskNotes enabled, enable TaskNotes TimeTrack, and confirm it loads.
+- [ ] Start different TaskNotes timers and confirm automatic reconciliation retains the most recently started task's timer.
+- [ ] Run **Keep newest TaskNotes timer only** with existing timers and confirm it retains the newest task's timer.
+- [ ] Run **Stop all TaskNotes time tracking** and confirm every active task timer stops.
+- [ ] Verify installation, both commands, and timer switching on mobile where applicable.
+- [ ] Update an existing BRAT installation to a later release in every target vault, then confirm the plugin still works.
+
+Keep the existing manual distribution channel until these checks pass on all target vaults. Verify BRAT updating when a later release is warranted; do not bump the version solely to simulate an update.
 
 ## Development
 
@@ -78,8 +89,6 @@ git push origin 0.1.1
 ```
 
 The version helper updates `package.json`, `package-lock.json`, `manifest.json`, and `versions.json` together. Tags must exactly equal the manifest version; omit the `v` prefix. The tag workflow builds and tests before creating a GitHub Release with the two installable assets. The branch workflow runs the same checks on pushes to `main` and pull requests.
-
-Do not remove an existing manual distribution channel until BRAT installation and updating work on every target vault.
 
 ## Sources
 
