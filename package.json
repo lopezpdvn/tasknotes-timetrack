@@ -1,5 +1,5 @@
 {
-  "name": "tasknotes-exclusive-timer",
+  "name": "tasknotes-timetrack",
   "version": "0.1.0",
   "description": "Keeps only the most recently started TaskNotes timer active.",
   "private": true,

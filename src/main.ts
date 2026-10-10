@@ -14,7 +14,7 @@ const MAX_CONNECT_ATTEMPTS = 60;
  * TaskNotes main.js.  The event is emitted for starts from the native context
  * menu, commands, HTTP API, and other API consumers.
  */
-export default class TaskNotesExclusiveTimer extends Plugin {
+export default class TaskNotesTimeTrack extends Plugin {
 	private unloaded = false;
 	private serial: Promise<void> = Promise.resolve();
 	private taskNotesApi: TaskNotesTimerApi | null = null;
@@ -83,7 +83,7 @@ export default class TaskNotesExclusiveTimer extends Plugin {
 			if (attempts >= MAX_CONNECT_ATTEMPTS) {
 				window.clearInterval(interval);
 				new Notice(
-					"TaskNotes Exclusive Timer: TaskNotes' runtime API was not found. Update and enable TaskNotes, then reload this plugin."
+					"TaskNotes TimeTrack: TaskNotes' runtime API was not found. Update and enable TaskNotes, then reload this plugin."
 				);
 			}
 		}, CONNECT_RETRY_MS);
@@ -114,7 +114,7 @@ export default class TaskNotesExclusiveTimer extends Plugin {
 		const api = this.taskNotesApi || this.getTaskNotesApi();
 		if (!api) {
 			new Notice(
-				"TaskNotes Exclusive Timer requires TaskNotes with its runtime API enabled."
+				"TaskNotes TimeTrack requires TaskNotes with its runtime API enabled."
 			);
 			return null;
 		}
@@ -128,8 +128,8 @@ export default class TaskNotesExclusiveTimer extends Plugin {
 				if (!this.unloaded) await operation();
 			})
 			.catch((error) => {
-				console.error("TaskNotes Exclusive Timer failed to reconcile timers", error);
-				new Notice("TaskNotes Exclusive Timer: unable to reconcile active timers.");
+				console.error("TaskNotes TimeTrack failed to reconcile timers", error);
+				new Notice("TaskNotes TimeTrack: unable to reconcile active timers.");
 			});
 		return this.serial;
 	}

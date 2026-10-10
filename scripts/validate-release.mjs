@@ -12,7 +12,7 @@ export function validateRelease(tag) {
   assert.equal(lock.version, manifest.version, "Lockfile and manifest versions differ");
   assert.equal(lock.packages[""].version, manifest.version, "Lockfile root version differs");
   assert.equal(versions[manifest.version], manifest.minAppVersion, "versions.json entry differs");
-  assert.equal(manifest.id, "tasknotes-exclusive-timer");
+  assert.equal(manifest.id, "tasknotes-timetrack");
   if (tag !== undefined) assert.equal(tag, manifest.version, "Tag must equal manifest version exactly (no v prefix)");
   assert.ok(readFileSync("main.js", "utf8").trim(), "Build main.js before releasing");
   return manifest;

@@ -12,7 +12,7 @@ function pluginCode() {
   const mainSource = stripTypeScriptTypes(readFileSync("src/main.ts", "utf8"))
     .replace(/^import \{[^}]*\} from "obsidian";/m, 'const { Notice, Plugin } = require("obsidian");')
     .replace(/^import \{[^}]*\} from "\.\/tasknotes-api";/m, "")
-    .replace("export default class TaskNotesExclusiveTimer", "module.exports.default = class TaskNotesExclusiveTimer");
+    .replace("export default class TaskNotesTimeTrack", "module.exports.default = class TaskNotesTimeTrack");
   const code = `${apiSource}\n${mainSource}`;
   assert.doesNotMatch(code, /^import\s/m, "The offline harness supports only the two existing source modules");
   return code;

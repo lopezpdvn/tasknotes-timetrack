@@ -1,4 +1,4 @@
-# TaskNotes Exclusive Timer
+# TaskNotes TimeTrack
 
 Keeps only the most recently started TaskNotes task timer active, without modifying TaskNotes. Includes commands to stop all timers or keep only the newest timer.
 
@@ -11,13 +11,13 @@ Once this repository has been published with a GitHub Release:
 1. Install and enable TaskNotes in the target vault.
 2. Install **Obsidian42 - BRAT** from Community plugins.
 3. In BRAT settings, add this repository's GitHub URL as a beta plugin and choose to track the latest release.
-4. Enable **TaskNotes Exclusive Timer** in Community plugins.
+4. Enable **TaskNotes TimeTrack** in Community plugins.
 5. Enable BRAT's update checks to receive subsequent releases. BRAT also supports manually checking for updates.
 6. If timers were already running before enabling this plugin, run **Keep newest TaskNotes timer only** once.
 
 Repeat the initial BRAT setup for each vault. Future releases then reach each vault through BRAT, without copying source folders between installations.
 
-For manual installation, download `main.js` and `manifest.json` from a release into `<vault configuration folder>/plugins/tasknotes-exclusive-timer/`, then enable the plugin. Source ZIPs are not installable builds. There is no `styles.css` because this plugin has no custom UI.
+For manual installation, download `main.js` and `manifest.json` from a release into `<vault configuration folder>/plugins/tasknotes-timetrack/`, then enable the plugin. Source ZIPs are not installable builds. There is no `styles.css` because this plugin has no custom UI.
 
 Publishing a GitHub repository does not make the plugin appear in the native Community plugins catalog. Catalog submission is an optional later step; follow the current Obsidian submission instructions linked below.
 
