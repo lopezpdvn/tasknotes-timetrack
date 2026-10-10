@@ -1,0 +1,9 @@
+{
+  "id": "tasknotes-exclusive-timer",
+  "name": "TaskNotes Exclusive Timer",
+  "version": "0.1.0",
+  "minAppVersion": "1.12.2",
+  "description": "Keeps only the most recently started TaskNotes time tracker active and adds a global stop command.",
+  "author": "Pedro Ivan Lopez",
+  "isDesktopOnly": false
+}

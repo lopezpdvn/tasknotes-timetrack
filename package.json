@@ -1,0 +1,25 @@
+{
+  "name": "tasknotes-exclusive-timer",
+  "version": "0.1.0",
+  "description": "Keeps only the most recently started TaskNotes timer active.",
+  "private": true,
+  "license": "MIT",
+  "author": "Pedro Ivan Lopez",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "dev": "node esbuild.config.mjs --watch",
+    "build": "node esbuild.config.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.cjs",
+    "check": "npm run typecheck && npm run build && npm test && npm run release:stage",
+    "release:stage": "node scripts/stage-release.mjs",
+    "release:validate": "node scripts/validate-release.mjs",
+    "release:version": "node scripts/set-version.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "22.0.0",
+    "esbuild": "0.25.0",
+    "obsidian": "1.12.2",
+    "typescript": "5.9.3"
+  }
+}
