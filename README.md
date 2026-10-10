@@ -4,11 +4,11 @@ Keeps only the most recently started TaskNotes task timer active, without modify
 
 This is an independent companion plugin, not part of TaskNotes.
 
-Maintainers: see the [distribution handoff](HANDOFF.md) for the starting state and remaining release checks.
+Maintainers: see the [distribution handoff](HANDOFF.md) for the originating snapshot, verified release, and remaining vault checks.
 
 ## Installation and updates
 
-Once this repository has been published with a GitHub Release:
+Version `0.1.0` is available from [GitHub Releases](https://github.com/lopezpdvn/tasknotes-timetrack/releases). Install through BRAT:
 
 1. Install and enable TaskNotes in the target vault.
 2. Install **Obsidian42 - BRAT** from Community plugins.
@@ -65,14 +65,7 @@ Direct build dependencies are pinned, and `package-lock.json` records the comple
 
 The public repository is [lopezpdvn/tasknotes-timetrack](https://github.com/lopezpdvn/tasknotes-timetrack). Push the checked source to its `main` branch before tagging a release. The license is MIT.
 
-For the first release, keep version `0.1.0`, run checks, commit the source, then:
-
-```sh
-git tag 0.1.0
-git push origin 0.1.0
-```
-
-For subsequent releases:
+The first release, `0.1.0`, is published. For subsequent releases:
 
 ```sh
 npm run release:version -- 0.1.1
